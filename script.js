@@ -1,37 +1,47 @@
-/* CALCULATOR KATA */
+/* ICE CREAM CONE KATA */
 
-/* This is best done with a JS switch control, though can also be a chain of conditionals. */
+/* Var, Alert, Prompt, Conditional, While, Function. Global, Concatenation */
+
+/* Initialize Globals
+ * Set a global variable myScoops = "Here's your cone with: "
+ */
+var myScoops = "Here's your cone with: "
 
 /* FUNCTION main() 
+ * initialize variable scoops, prompt user for "how many scoops (max 3)?"
+ * if scoops is less than 4, call scoopLoop with argument scoops
+ * otherwise display "oink oink" and call main again.
  * @param: none (main never gets params)
  * @return: none (main never gets returns
  */
-function main (){
-let operation = prompt ("+, -, *, /")
-let a = parseInt (prompt ("Enter your first number"))
-let b = parseInt (prompt ("Enter your second number"))
-let result = 0
-if (operation == "+") {result = add(a,b)}
-else if (operation == "-") {result = subtract(a,b)}
-else if (operation == "*") {result = multiply(a,b)}
-else if (operation == "/") {result = divide(a,b)}
-alert (a + operation + b + " = " + result)
+function main(){
+    let scoop = prompt("how many scoops? (3 max)")
+    if (scoop < 4) scoopLoop("scoops")
+    else {alert ("oink oink")
+    main()
+    }
+}
+/* FUNCTION scoopLoop(scoops) 
+ * start scoop at 1 and loop while scoop is less than or equal to scoops
+ * inside the loop add nextScoop(scoop) to myScoops
+ * after the loop's done, display "Here's your cone with " myScoops
+ * @param: scoops (integer)
+ * @return: none
+ */
+function scoopLoop(scoops) {
+for (let scoop = 1; scoop <= scoops; scoop++) {
+myScoops += nextScoop(scoop)
+}
+alert (myScoops)
 }
 
-function add(a,b){
-return a + b
-}
-
-function subtract(a,b){
-    return a - b
-}
-
-function multiply(a,b){
-    return a * b
-}
-
-function divide(a,b){
-    return a / b
+/* FUNCTION nextScoop(scoop)
+ * initialize a variable called flavor, prompt for "Flavor for scoop number [scoop]"
+ * @param: scoop (integer)
+ * @return: flavor (string)
+ */
+function nextScoop(scoop) {
+return "\n vanilla " 
 }
 
 /* ************************************* */
