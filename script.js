@@ -16,7 +16,7 @@ var myScoops = "Here's your cone with: "
  */
 function main(){
     let scoop = prompt("how many scoops? (3 max)")
-    if (scoop < 4) scoopLoop("scoops")
+    if (scoop < 4) scoopLoop(scoop)
     else {alert ("oink oink")
     main()
     }
@@ -40,8 +40,10 @@ alert (myScoops)
  * @param: scoop (integer)
  * @return: flavor (string)
  */
-function nextScoop(scoop) {
-return "\n vanilla " 
+function nextScoop(scoop) { 
+var flavor = prompt ("flavor for scoop number " + scoop)
+return flavor
+// return "\n vanilla "
 }
 
 /* ************************************* */
