@@ -10,7 +10,7 @@
  * @return: none (main never gets returns
  */
 function main(){
-    let color = prompt ("enter a primary or secondary color")
+    let color = prompt ("enter a primary or secondary color ")
     if (checkColor(color) == false) {
          alert ("must be  a primary or secondary color")
          main()
@@ -29,14 +29,8 @@ function main(){
  */
 function checkColor(color){
     let goodColor = false 
-    if (color == "red") goodColor = true
-    if (color == "yellow") goodColor = true
-    if (color == "blue") goodColor = true
-    if (color == "green") goodColor = true
-    if (color == "purple") goodColor = true
-    if (color == "orange") goodColor = true
+    if (color == "red" || color == "orange"|| color == "yellow"|| color == "green"|| color == "blue" || color == "purple") goodColor = true
     return goodColor
-    
 }
 
 /* FUNCTION complementaryColor(color)
@@ -49,29 +43,11 @@ function checkColor(color){
  */
 function complementaryColor(color) {
 let complement = ""
-switch (color){
-    case 0:
-    if (color = "red") {
-        let complement = "test"
-    }
-    break;
-  case 1:
-    day = "Monday";
-    break;
-  case 2:
-     day = "Tuesday";
-    break;
-  case 3:
-    day = "Wednesday";
-    break;
-  case 4:
-    day = "Thursday";
-    break;
-  case 5:
-    day = "Friday";
-    break;
-  case 6:
-    day = "Saturday";
-}
-
+if (color == "red") complement = "green"
+if (color == "yellow") complement = "purple"
+if (color == "blue") complement = "orange"
+if (color == "green") complement = "red"
+if (color == "purple") complement = "yellow"
+if (color == "orange") complement = "blue"
+return complement
 }
