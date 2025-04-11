@@ -1,53 +1,65 @@
-/* COLOR WHEEL KATA */
+/* CALCULATOR KATA */
 
-/* Var Alert Prompt Conditional Switch 3 Functions */
+/* This is best done with a JS switch control, though can also be a chain of conditionals. */
 
 /* FUNCTION main() 
- * create a variable called color and prompt the user for a primary or secondary color
- * if checkColor(color) says false, say "must be primary or secondary" and call main again.
- * otherwise, display "the complementary color of [color] is [complementaryColor(color)]"
+ * Ask the user what operation they want (+, -, *, /)
+ * Ask the user for the first number (a)
+ * Parse a as an integer
+ * Ask the user for the second number (b)
+ * Parse b as an integer
+ * Based on the operation, send the numbers to the right function as
+ * arguments and store the returned value in variable called result
+ * Alert the equation a + operation + b = result
  * @param: none (main never gets params)
  * @return: none (main never gets returns
  */
 function main(){
-    let color = prompt ("enter a primary or secondary color ")
-    if (checkColor(color) == false) {
-         alert ("must be  a primary or secondary color")
-         main()
-    }
-    else alert ("the complementary color of " + color + " is " + complementaryColor(color))
+    let operation = prompt (" + - * or /")
+    let a = parseInt (prompt ("enter the first number"))
+    let b = parseInt (prompt ("enter the second number"))
+    let result = 0
+    if (operation = "+") result = add(a,b)
+    else if (operation = "-") result = subtract(a,b)
+    else if (operation = "*") result = multiply(a,b)
+    else if (operation = "/") result = divide(a,b)
+    alert (a + operation + b + "=" + result)
 }
-/* FUNCTION checkColor (color)
- * set boolean goodColor to false
- * use a compound conditional (or) to check for primary
- * if it's a primary color, set goodColor to true
- * otherwise, use a compound conditional (or) to check for secondary
- * if it's a secondary color, set goodColor to true
- * return goodColor
- * @param: color (string)
- * @return: goodColor (boolean)
+/* FUNCTION add(a,b)
+ * define a function called add with two number parameters a and b
+ * @param: a, b (integers)
+ * @return: a + b
  */
-function checkColor(color){
-    let goodColor = false 
-    if (color == "red" || color == "orange"|| color == "yellow"|| color == "green"|| color == "blue" || color == "purple") goodColor = true
-    return goodColor
+function add(a,b){
+    let result = a+b
+    return result
+}
+/* FUNCTION subtract(a,b)
+ * define a function called subtract with two number parameters a and b
+ * @param: a, b (integers)
+ * @return: a - b
+ */
+function subtract(a,b){
+    let result = a-b
+    return result
+}
+/* FUNCTION multiply(a,b)
+ * define a function called multiply with two number parameters a and b
+ * @param: a, b (integers)
+ * @return: a * b (* means multiply)
+ */
+function multiply(a,b){
+    let result = a*b
+    return result
+}
+/* FUNCTION divide(a,b)
+ * define a function called divide with two number parameters a and b
+ * @param: a, b (integers)
+ * @return: a / b (/ means divided by)
+ */
+function divide(a,b){
+    let result = a/b
+    return result
 }
 
-/* FUNCTION complementaryColor(color)
- * create a variable called complement, set to ""
- * use a switch function and switch on color
- * (look at this: https://www.canva.com/colors/color-wheel)
- * in the switch, assign the complementary color to complement
- * @param: color (string)
- * @return: complement (string)
- */
-function complementaryColor(color) {
-let complement = ""
-if (color == "red") complement = "green"
-if (color == "yellow") complement = "purple"
-if (color == "blue") complement = "orange"
-if (color == "green") complement = "red"
-if (color == "purple") complement = "yellow"
-if (color == "orange") complement = "blue"
-return complement
-}
+/* ************************************* */
