@@ -69,6 +69,8 @@ function randNewStudent(){
     let name = ""
     while(pickedYet != -1){
     student = Math.floor(Math.random()*students.length)
+    name = students[student]
+    pickedYet = picked
     }
     picked.push(name)
     return name
