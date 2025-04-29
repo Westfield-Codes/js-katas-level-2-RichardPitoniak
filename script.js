@@ -1,52 +1,64 @@
-/* COLOR WHEEL KATA */
+/* RANDOM STUDENT KATA:  */
 
-/* Var Alert Prompt Conditional Switch 3 Functions */
+// Who will be gatekeeper and keymaster today?
 
-/* FUNCTION main() 
- * create a variable called color and prompt the user for a primary or secondary color
- * if checkColor(color) says false, say "must be primary or secondary" and call main again.
- * otherwise, display "the complementary color of [color] is [complementaryColor(color)]"
- * @param: none (main never gets params)
- * @return: none (main never gets returns
+/* Global Variables */
+// Create an array called students, start empty. 
+// Create an array called picked, start empty. 
+const students = []
+const picked = []
+/* Function Main()
+ * Set variable count to asking how many students there are.
+ * Fill global array students by passing count as an argument to addStudents
+ * Set gateKeeper = randStudent(), the name of a random student in the list
+ * Set keymaster = randNewStudent(), name of a different random student
+ * Display gatekeeper name and keymaster name for this kata
+ * @param = none
+ * @return = none
  */
-const colorList = ["red","orange","yellow","green","blue","purple"]
-function main(){
-    let color = prompt("enter a primary or secondary color")
-    if (!checkColor(color)) {
-        alert ("must be a primary or secondary color")
-        main()
+    function main(){
+        let count = prompt (" how many students are there?")
+        addStudents(count)
+        let gateKeeper = randStudent()
+        let keyMaster = randNewStudent()
+        alert (" the gatekeeper is " + gateKeeper + " and the keymaster is " + keyMaster)
     }
-    else alert("the complementary color of " + color + " is " + complementaryColor(color))
-}
-/* FUNCTION checkColor (color)
- * set boolean goodColor to false
- * use a compound conditional (or) to check for primary
- * if it's a primary color, set goodColor to true
- * otherwise, use a compound conditional (or) to check for secondary
- * if it's a secondary color, set goodColor to true
- * return goodColor
- * @param: color (string)
- * @return: goodColor (boolean)
+/* Function addStudents(count)
+ * Create a students array, nothing in it. 
+ * Use a for loop to add student names to the students array.
+ * The loop should run count number of times. 
+ * Return the array of student names 
+ * @param = count {integer}
+ * @return = none
  */
-function checkColor(color){
-let goodColor = false
-
-if (colorList.includes(color)) goodColor = true
-return goodColor
+function addStudents(count){
+    for (let student = 1; student <= count; student++) {
+       students.push(prompt ("enter the student's names"))
+    }
+    return students
 }
-
-/* FUNCTION complementaryColor(color)
- * create a variable called complement, set to ""
- * use a switch function and switch on color
- * (look at this: https://www.canva.com/colors/color-wheel)
- * in the switch, assign the complementary color to complement
- * @param: color (string)
- * @return: complement (string)
+/* Function randStudent()
+ * Set student = random number, 0 to length of students array.
+ * Set name = element in students array at that random index.
+ * Add name to picked array. 
+ * Return the name of the random student
+ * @param = none
+ * @return = name {string}
  */
-function complementaryColor(color){
-    let complement=""
-    let index = colorList.indexOf(color)
-    if ( index < 3) { complement = colorList.at(colorList.indexOf(color) + 3)}
-    else complement = colorList.at(colorList.indexOf(color) - 3)
-    return complement
+function randStudent(){
+    
 }
+/* Function randNewStudent() (start with copy of randStudent)
+ * Set student = "" and picked = 0. 
+ * Loop while picked is not equal to -1
+ * Set student = random number, 0 to length of students array.
+ * Set name = element in students array at that random index.
+ * Set picked = the index of that name the picked array. 
+ * End the while loop.
+ * Add name to picked array.
+ * Return the name of the new random student
+ * @param = none
+ * @return = name {string}
+ */
+
+ 
