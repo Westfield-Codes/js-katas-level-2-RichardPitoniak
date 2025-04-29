@@ -45,6 +45,8 @@ return goodColor
  */
 function complementaryColor(color){
     let complement=""
-   
+    let index = colorList.indexOf(color)
+    if ( index < 3) { complement = colorList.at(colorList.indexOf(color) + 3)}
+    else complement = colorList.at(colorList.indexOf(color) - 3)
     return complement
 }
