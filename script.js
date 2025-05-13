@@ -19,7 +19,7 @@ function main(){
  function makeList(){
     let shoppingList = "To buy: "
     for (let item = 1; item <= 5; item++ ){
-       shoppingList+= prompt ("Item number " + item + "\n")
+       shoppingList+= prompt ("Item number " + item ) + "\n"
     }
     alert (shoppingList)
  }
