@@ -16,13 +16,14 @@ function main(){
     makeList()
 }
 
- function makeList(){
+ /* function makeList(){
     let shoppingList = "To buy: "
     for (let item = 1; item <= 5; item++ ){
        shoppingList+= prompt ("Item number " + item ) + "\n"
     }
     alert (shoppingList)
  }
+*/
 /* 2. for loop and array with toString */
 
 /* Same function, using previous code, BUT:
@@ -32,8 +33,14 @@ function main(){
  * no need to add a line break after
  * at end of loop, alert the list title, followed by
  * the list with toString() method (it won't have line breaks)*/
-
-
+ /* function makeList(){
+    let shopArray = []
+    for (let item = 1; item <= 5; item++ ){
+       shopArray.push(prompt ("Item #" + item))
+    }
+    alert (shopArray.toString())
+ }
+*/
 
 /* 3. for loop and array with join method 
 
@@ -41,6 +48,15 @@ function main(){
  * the at end, alert list with array.join() method with line breaks 
  * instead of commas */
  
+ function makeList(){
+    let shopArray = []
+    for (let item = 1; item <= 5; item++ ){
+       shopArray.push(prompt ("Item #" + item))
+    }
+    alert (shopArray.join("\n"))
+ }
+
+
 /* 4. loops, arrays and functions */
 
 /* Same function, using previous code, but THIS TIME:
