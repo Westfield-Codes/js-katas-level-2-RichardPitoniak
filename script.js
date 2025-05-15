@@ -48,29 +48,52 @@ function main(){
  * the at end, alert list with array.join() method with line breaks 
  * instead of commas */
  
- function makeList(){
+ /* function makeList(){
     let shopArray = []
     for (let item = 1; item <= 5; item++ ){
        shopArray.push(prompt ("Item #" + item))
     }
     alert (shopArray.join("\n"))
- }
+ } */
 
 
-/* 4. loops, arrays and functions */
+/* 4. 2D Arrays: add Pricing */
 
-/* Same function, using previous code, but THIS TIME:
- * store each item as a numbered item ["1. cookies","2. donuts"])   
- * using the loop index. */
-
-/* MULTIPLICATION FREQUENCY KATA */
-
-/* findTopFactor(array) analyzes an array of integers from 3-9
- * Loop over a list, and use another array, factorCount, to 
- * count how many of those factors appear in the list.  Use a 
- * loop from 0 to one less than array.length to look at
- * the next item and push it to the frequency array.  You'll end
- * up with something like [ 0 1 2 4 2 3 1] for an array [0, 1, 
- * 3, 4, 3, 4, 2, 4, 5, 4, 5, 6, 1, 2].  Output should be (with 
- * line breaks) something like: 0:0 1:1 2:2 3:2 4:4) 
+/* Same function, using previous code, but THIS TIME add prices
+ * When someone enters an item, prompt them also to enter a price separating by comma (like milk, 1.99)])   
+ * Convert that entry to an itemPrice array by using string.split() and use a comma as delimiter
+ * Push the itemPrice array to shopArray
  */
+
+ /* function makeList(){
+    let shopArray = []
+    let next = ""
+    for (let item = 1; item <= 5; item++ ){
+       next = prompt ("Item #" + item + ":" + " enter item name, price" )
+       shopArray.push(next.split(","))
+    }
+    alert (shopArray.join("\n"))
+ }
+*/
+/* 5. Total up the prices */
+
+/* Same function, using previous code, but THIS TIME total the prices.
+ * After you have built the array, create a NEW loop that adds the price 
+ * of each item to a total. Do this before the alert. 
+ * Save the first alert content as message. 
+ * Add total as a line below message, then alert the message. 
+ */
+ function makeList(){
+    let shopArray = []
+    let next = ""
+    let priceTotal = 0
+    for (let item = 1; item <= 3; item++ ){
+       next = prompt ("Item #" + item + ":" + " enter item name, price" )
+       shopArray.push(next.split(","))
+    }
+  for (let i = 0; i <= 3; i++){
+   priceTotal += shopArray[i][1]
+  }
+   let message = (shopArray.join("\n"))
+   alert (message + "\n" + "your total is" + "\n" + priceTotal)
+ }
