@@ -91,9 +91,9 @@ function main(){
        next = prompt ("Item #" + item + ":" + " enter item name, price" )
        shopArray.push(next.split(","))
     }
-  for (let i = 0; i <= 3; i++){
-   priceTotal += shopArray[i][1]
+  for (let i = 1; i <= 3; i++){
+   priceTotal += parseFloat(shopArray[i-1][1])
   }
    let message = (shopArray.join("\n"))
-   alert (message + "\n" + "your total is" + "\n" + priceTotal)
+   alert (message + "\n" + "your total is " + "$" + priceTotal)
  }

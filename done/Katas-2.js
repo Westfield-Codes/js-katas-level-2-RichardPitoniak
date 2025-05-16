@@ -185,3 +185,18 @@ function complementaryColor(color){
     else complement = colorList.at(colorList.indexOf(color) - 3)
     return complement
 }
+
+function makeList(){
+    let shopArray = []
+    let next = ""
+    let priceTotal = 0
+    for (let item = 1; item <= 3; item++ ){
+       next = prompt ("Item #" + item + ":" + " enter item name, price" )
+       shopArray.push(next.split(","))
+    }
+  for (let i = 1; i <= 3; i++){
+   priceTotal += parseFloat(shopArray[i-1][1])
+  }
+   let message = (shopArray.join("\n"))
+   alert (message + "\n" + "your total is " + "$" + priceTotal)
+ }
